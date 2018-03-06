@@ -1,0 +1,22 @@
+{
+  "name": "w4d2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test_script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dylanlj/w4d2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dylanlj/w4d2/issues"
+  },
+  "homepage": "https://github.com/Dylanlj/w4d2#readme",
+  "dependencies": {
+    "pg": "^7.4.1"
+  }
+}
