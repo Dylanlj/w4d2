@@ -1,4 +1,4 @@
-const config = require ('./knexfile.js')
+const config = require ('./knex-connection.js')
 const knex = require("knex")(config)
 
 function addPerson (people, callback){
