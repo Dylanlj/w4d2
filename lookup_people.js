@@ -17,15 +17,17 @@ function findPersonByName (client, people, callback){
   where first_name = $1
   or last_name = $1;`
 
-  for(let person of people){
-    client.query (query, [person], (err, result) => {
+  for(let i = 0;  i < people.length; i++){
+    client.query (query, [people[i]], (err, result) => {
       if (err) {
         console.error(err)
         callback (err)
-
         return
       }
-      callback(null, `${result.rows[0].first_name} ${result.rows[0].last_name}, born ${result.rows[0].birthdate}`)
+      callback(null, `${result.rows[0].first_name} ${result.rows[0].last_name}, born ${result.rows[0].birthdate.toDateString()}`)
+        if(i === people.length - 1){
+          client.end()
+        }
       }
     );
   }
@@ -37,8 +39,5 @@ client.connect((err) => {
   }
   findPersonByName(client, process.argv.slice(2), (err, result) => {
     console.log(result)
-
   })
-
-
 })
